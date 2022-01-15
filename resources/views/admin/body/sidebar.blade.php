@@ -37,6 +37,73 @@
             <li><a href="calendar.html"><i class="ti-more"></i>Calendar</a></li>
           </ul>
         </li> 
+         <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Slider</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.slider')}}"><i class="ti-more"></i>View Slider</a></li>
+            
+          </ul>
+        </li> 
+         <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>What We Do</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.service')}}"><i class="ti-more"></i>View What We Do</a></li>
+            
+          </ul>
+        </li> 
+
+         <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Work</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.work')}}"><i class="ti-more"></i>View Work</a></li>
+            
+          </ul>
+        </li> 
+
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Clients</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.client')}}"><i class="ti-more"></i>View Clients</a></li>
+            
+          </ul>
+        </li> 
+          <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Messages</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.message')}}"><i class="ti-more"></i>View Messages</a></li>
+            
+          </ul>
+        </li> 
 		  
         <li class="treeview">
           <a href="#">
