@@ -39,7 +39,8 @@
         </li> 
          <li class="treeview">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            
+            <i data-feather="sliders"></i>
             <span>Slider</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -52,7 +53,8 @@
         </li> 
          <li class="treeview">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            
+            <i data-feather="bell"></i>
             <span>What We Do</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -66,7 +68,7 @@
 
          <li class="treeview">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="briefcase"></i>
             <span>Work</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -80,7 +82,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="activity"></i>
             <span>Clients</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>

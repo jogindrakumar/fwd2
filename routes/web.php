@@ -28,7 +28,13 @@ use App\Models\Contact;
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $sliders = Slider::all();
+    $services = Service::all();
+    $first_works = DB::table('works')->find(1);
+    $second_works = DB::table('works')->find(2);
+    $third_works = DB::table('works')->find(3);
+    return view('home',compact('sliders','services','first_works','second_works','third_works'));
 });
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
