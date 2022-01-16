@@ -13,6 +13,11 @@ class WorkController extends Controller
 
      //show home page works
 
+     public function About(){
+         $abouts = Work::all();
+         return view('pages.about',compact('abouts'));
+     }
+
     public function Work(){
         $works = DB::table('works')->where('work_name','Web Development')->first();
         $second_work = DB::table('works')->where('work_name','SEO Expert')->first();

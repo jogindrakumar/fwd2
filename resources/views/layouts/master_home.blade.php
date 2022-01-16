@@ -43,9 +43,9 @@
     <!-- end header inner -->
     <!-- end header -->
     <!-- top -->
-    <div class="full_bg">
-        @include('layouts.body.slider')
-    </div>
+    
+      
+    
     <!-- end banner -->
     <!-- wedo -->
    @yield('main_content')

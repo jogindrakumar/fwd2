@@ -9,7 +9,13 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    //
+    //hoeme contact 
+
+     public function Contact(){
+        
+            return view('pages.contact');
+    }
+
     
     //all message list
 
@@ -39,7 +45,7 @@ class ContactController extends Controller
                         'alert-type' => 'success'
                     );
 
-    return Redirect()->route('contact')->with($notification);
+    return Redirect()->back()->with($notification);
 
     }
 

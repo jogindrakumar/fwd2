@@ -12,6 +12,7 @@ use App\Http\Controllers\WorkController;
 use App\Models\Work;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PortfolioController;
 use App\Models\Client;
 use App\Models\Contact;
 
@@ -34,8 +35,12 @@ Route::get('/', function () {
     $first_works = DB::table('works')->find(1);
     $second_works = DB::table('works')->find(2);
     $third_works = DB::table('works')->find(3);
-    return view('home',compact('sliders','services','first_works','second_works','third_works'));
+    $sliders = Slider::all();
+    return view('home',compact('sliders','services','first_works','second_works','third_works','sliders'));
 });
+
+
+
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -68,7 +73,7 @@ Route::post('/admin/slider/update/{id}',[SliderController::class,'Update']);
   // services route
 
 
-Route::get('/services',[ServiceController::class,'Service'])->name('service');
+Route::get('/services',[ServiceController::class,'Service'])->name('service'); // home page route 
 
 Route::get('/admin/service/all',[ServiceController::class,'AllService'])->name('all.service');
 Route::post('/admin/service/add',[ServiceController::class,'AddService'])->name('store.service');
@@ -107,7 +112,16 @@ Route::get('/admin/message',[ContactController::class,'AllMessage'])->name('all.
 Route::post('/admin/message/sent',[ContactController::class,'AddMessage'])->name('store.message');
 Route::get('/admin/message/delete/{id}',[ContactController::class,'DeleteMessage']);
 
+// home pages routes
 
+Route::get('/about',[WorkController::class,'About'])->name('about');
+
+// home portfolio route
+
+Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
+
+// home contact route
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
 
 
 

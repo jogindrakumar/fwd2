@@ -15,11 +15,16 @@ class ServiceController extends Controller
     // }
     //show home page services
 
+    // public function Service(){
+    //     $services = DB::table('services')->where('service_name','Web Development')->first();
+    //     $second_service = DB::table('services')->where('service_name','SEO Expert')->first();
+    //     return view('pages.service',compact('services','second_service'));
+    // }
+
     public function Service(){
-        $services = DB::table('services')->where('service_name','Web Development')->first();
-        $second_service = DB::table('services')->where('service_name','SEO Expert')->first();
-        return view('pages.service',compact('services','second_service'));
-    }
+         $services = Service::all();
+         return view('pages.services',compact('services'));
+     }
 
       // all service function 
 

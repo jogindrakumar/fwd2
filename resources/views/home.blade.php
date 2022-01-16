@@ -1,6 +1,8 @@
+   
  @extends('layouts.master_home')
+ 
  @section('main_content')
-
+@include('layouts.body.slider')
 
  <div class="wedo">
         <div class="wedo_white">
@@ -117,7 +119,7 @@
     </div>
     <!-- end work -->
     <!-- schedule -->
-    <div class="schedule">
+    {{-- <div class="schedule">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -133,7 +135,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- end schedule -->
     <!-- team -->
     <div class="team">
@@ -149,9 +151,9 @@
                     <div class="team_img">
                         <figure><img src="{{asset('frontend/images/team.jpg')}}" alt="#" />
                         </figure>
-                        <div class="play_icon">
+                        {{-- <div class="play_icon">
                             <a class="play-btn" href="javascript:void(0)"><img src="{{asset('frontend/images/play_icon.png')}}"></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -223,22 +225,36 @@
                     </div>
                 </div>
                 <div class="col-md-8 offset-md-2">
-                    <form id="request" class="main_form">
+                
+                        <form action="{{route('store.message')}}" id="request" method="POST" class="main_form">
+                            @csrf
                         <div class="row">
                             <div class="col-md-12 ">
-                                <input class="form_control" placeholder="Your name" type="type" name=" Name">
+                                <input class="form_control" placeholder="Your name" type="text" name="name">
+                                @error('name')
+                                <span class="text-danger">{{$message}}</span>        
+                                @enderror
                             </div>
                             <div class="col-md-12">
-                                <input class="form_control" placeholder="Your email" type="type" name="Email">
+                                <input class="form_control" placeholder="Your email" type="email" name="email">
+                                 @error('email')
+                                <span class="text-danger">{{$message}}</span>        
+                                @enderror
                             </div>
                             <div class="col-md-12">
-                                <input class="form_control" placeholder="Phone Number" type="type" name="Phone Number">
+                                <input class="form_control" placeholder="Subject" type="text" name="subject">
+                                 @error('subject')
+                                <span class="text-danger">{{$message}}</span>        
+                                @enderror
                             </div>
                             <div class="col-md-12">
                                 <textarea class="textarea" placeholder="Message" type="type" name="message"> </textarea>
+                                  @error('message')
+                                <span class="text-danger">{{$message}}</span>        
+                                @enderror
                             </div>
                             <div class="col-md-12">
-                                <button class="send_btn">Send Now</button>
+                                <button class="send_btn" type="submit">Send Now</button>
                             </div>
                         </div>
                     </form>
