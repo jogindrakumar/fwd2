@@ -10,6 +10,8 @@ use App\Models\Client;
 class ClientController extends Controller
 {
     //
+
+  
     
      //show home page Clients
 

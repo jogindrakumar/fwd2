@@ -15,32 +15,23 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-md-12">
                     <div class="ma_top">
                         <div class="row">
-                            <div class="col-md-4"> 
-                                <div class="web_box left0 text_align_center">
-                                    <i><img src="{{asset('frontend/images/wedo_icon1.png')}}" alt="#"/></i>
-                                    <h3>Web Development</h3>
-                                    <p>web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will web sites still in</p>
-                                </div>
-                            </div>
+                            @foreach ($services as $service)
+                                
+                            
                             <div class="col-md-4">
                                 <div class="web_box left0 text_align_center">
-                                    <i><img src="{{asset('frontend/images/wedo_icon2.png')}}" alt="#"/></i>
-                                    <h3>App Development</h3>
-                                    <p>web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will web sites still in</p>
+                                    <i><img src="{{asset($service->service_image)}}" alt="#"/></i>
+                                    <h3>{{$service->service_name}}</h3>
+                                    <p>{{$service->service_text}}</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="web_box text_align_center">
-                                    <i><img src="{{asset('frontend/images/wedo_icon3.png')}}" alt="#"/></i>
-                                    <h3>SEO Optimization</h3>
-                                    <p>web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will web sites still in</p>
-                                </div>
-                            </div>
+                            @endforeach
+                           
                             <div class="col-md-12">
                                 <a class="read_more" href="wedo.index">Read More</a>
                             </div>

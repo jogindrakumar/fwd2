@@ -11,19 +11,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+           <div class="row">
                 <div class="col-md-12">
                     <div class="margi_bottom30">
                         <div class="row d_flex grid">
                             <div class=" col-md-6 marg_left">
                                 <div id="ho_img" class="work_img">
-                                    <figure><img src="  {{asset('frontend/images/work1.jpg')}}" alt="#" /></figure>
+                                   
+                                        
+                                   
+                                    <figure><img src="{{asset($first_works->work_image)}}" alt="#" /></figure>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="work_box">
-                                    <h3>Website Design</h3>
-                                    <p>look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in</p>
+                                   
+                                    <h3>{{$first_works->work_name}}</h3>
+                                    <p>{{$first_works->work_text}}</p>
                                     <a class="read_more" href="Javascript:void(0)">Read More</a>
                                 </div>
                             </div>
@@ -35,14 +39,32 @@
                         <div class="row d_flex">
                             <div class="col-md-6">
                                 <div class="work_box">
-                                    <h3>Website Development</h3>
-                                    <p>look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in</p>
+                                    <h3>{{$second_works->work_name}}</h3>
+                                    <p>{{$second_works->work_text}}</p>
                                     <a class="read_more" href="Javascript:void(0)">Read More</a>
                                 </div>
                             </div>
                             <div class=" col-md-6 marg_right order">
                                 <div id="ho_img" class="work_img">
-                                    <figure><img src="  {{asset('frontend/images/work2.jpg')}}" alt="#" /></figure>
+                                    <figure><img src="{{asset($second_works->work_image)}}" alt="#" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="margi_bottom30">
+                        <div class="row d_flex">
+                            <div class=" col-md-6 marg_left">
+                                <div id="ho_img" class="work_img">
+                                    <figure><img src="{{asset($third_works->work_image)}}" alt="#" /></figure>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="work_box">
+                                    <h3>{{$third_works->work_name}}</h3>
+                                    <p>{{$third_works->work_text}}</p>
+                                    <a class="read_more" href="Javascript:void(0)">Read More</a>
                                 </div>
                             </div>
                         </div>

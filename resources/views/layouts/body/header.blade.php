@@ -56,13 +56,13 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="col-md-3  d_none">
+                    {{-- <div class="col-md-3  d_none">
                         <ul class="email text_align_right">
                             <li><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i>Log In</a></li>
                             <li><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
                             <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

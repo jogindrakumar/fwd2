@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Carbon;
 use App\Models\Work;
+use Illuminate\Support\Facades\DB;
 
 class WorkController extends Controller
 {
@@ -15,7 +16,10 @@ class WorkController extends Controller
 
      public function About(){
          $abouts = Work::all();
-         return view('pages.about',compact('abouts'));
+        $first_works = DB::table('works')->find(1);
+        $second_works = DB::table('works')->find(2);
+        $third_works = DB::table('works')->find(3);
+         return view('pages.about',compact('abouts','first_works','second_works','third_works'));
      }
 
     public function Work(){

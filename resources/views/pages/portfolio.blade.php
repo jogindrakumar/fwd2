@@ -15,24 +15,33 @@
             <div class="row d_flex">
                 <div class=" col-md-6">
                     <div id="ho_img" class="portfolio_img">
+                         
                         <figure><img src=" {{asset('frontend/images/potoub.jpg')}}" alt="#" /></figure>
+                        <a href="#" class="btn btn-outline-info">View</a>
                     </div>
+                   
                 </div>
                 <div class=" col-md-6">
                     <div id="ho_img" class="portfolio_img">
                         <figure><img src=" {{asset('frontend/images/dash.jpg')}}" alt="#" /></figure>
+                        <a href="#" class="btn btn-outline-info">View</a>
                     </div>
                 </div>
                 <div class=" col-md-6">
                     <div id="ho_img" class="portfolio_img">
                         <figure><img src=" {{asset('frontend/images/digitalex.jpg')}}" alt="#" /></figure>
+                        
+                        <a href="#" class="btn btn-outline-info">View</a>
                     </div>
                 </div>
                 <div class=" col-md-6">
+                    
                     <div id="ho_img" class="portfolio_img">
                         <figure><img src=" {{asset('frontend/images/ears.jpg')}}" alt="#" /></figure>
+                        <a href="#" class="btn btn-outline-info">View</a>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>

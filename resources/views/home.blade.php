@@ -179,36 +179,21 @@
                 <div class="col-md-12">
                     <!--  Demos -->
                     <div class="owl-carousel owl-theme">
+                        @foreach ($clients as $client)
+                            
+                        
                         <div class="item">
                             <div class="our_fishs_box text_align_center">
-                                <p>English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a searchEnglish. Many desktop publishing packages and web page editors now use Lorem I
+                                <p>{{$client->client_text}}
                                 </p>
                                 <div class="ser_img">
-                                    <i><img src="{{asset('frontend/images/test2.png')}}" alt="#"/></i>
-                                    <h3>defaulto</h3>
+                                    <i><img src="{{asset($client->client_image)}}" alt="#"/></i>
+                                    <h3>{{$client->client_name}}</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="our_fishs_box text_align_center">
-                                <p>English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a searchEnglish. Many desktop publishing packages and web page editors now use Lorem I
-                                </p>
-                                <div class="ser_img">
-                                    <i><img src="{{asset('frontend/images/test1.png')}}" alt="#"/></i>
-                                    <h3>Publishi</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="our_fishs_box text_align_center">
-                                <p>English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a searchEnglish. Many desktop publishing packages and web page editors now use Lorem I
-                                </p>
-                                <div class="ser_img">
-                                    <i><img src="{{asset('frontend/images/test3.png')}}" alt="#"/></i>
-                                    <h3>editors</h3>
-                                </div>
-                            </div>
-                        </div>
+                       @endforeach
+                        
                     </div>
                 </div>
             </div>
