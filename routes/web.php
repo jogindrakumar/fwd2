@@ -57,7 +57,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>['admin:admin']],function(){
 
     Route::get('/logout',[AdminController::class,'destroy'])->name('admin.logout');
     Route::get('/profile',[AdminProfileController::class,'AdminProfile'])->name('admin.profile');
-    Route::get('/profile/edit',[AdminProfileController::class,'AdminProfileEdit'])->name('admin.profile.edit');
+   Route::get('/admin/profile/edit',[AdminProfileController::class,'AdminProfileEdit'])->name('admin.profile.edit');
+ Route::post('/admin/profile/store',[AdminProfileController::class,'AdminProfileStore'])->name('admin.profile.store');
 
      
 
