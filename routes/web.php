@@ -53,35 +53,21 @@ Route::group(['prefix' => 'admin', 'middleware'=>['admin:admin']],function(){
 
     Route::get('/login',[AdminController::class,'loginForm']);
     Route::post('/login',[AdminController::class,'store'])->name('admin.login');
-    //Admin All routes
-
-    Route::get('/logout',[AdminController::class,'destroy'])->name('admin.logout');
-    Route::get('/profile',[AdminProfileController::class,'AdminProfile'])->name('admin.profile');
-    Route::get('/admin/profile/edit',[AdminProfileController::class,'AdminProfileEdit'])->name('admin.profile.edit');
-    Route::post('/admin/profile/store',[AdminProfileController::class,'AdminProfileStore'])->name('admin.profile.store');
-    Route::get('/admin/change/password',[AdminProfileController::class,'AdminChangePassword'])->name('admin.change.password');
-    Route::post('/admin/update/password',[AdminProfileController::class,'AdminUpdatePassword'])->name('update.change.password');
+    
 
      
 
 });
+        //Admin All routes
 
-
-// home page routes
-
-        Route::get('/services',[ServiceController::class,'Service'])->name('service'); // home page route 
-
-        Route::get('/works',[WorkController::class,'Work'])->name('work');
-
-        Route::get('/clients',[ClientController::class,'Client'])->name('client');
-
-        Route::get('/about',[WorkController::class,'About'])->name('about');
-
-        Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
-
-        // home contact route
-        Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
-
+    Route::middleware(['auth:admin'])->group(function () {
+        
+    Route::get('/admin/logout',[AdminController::class,'destroy'])->name('admin.logout');
+    Route::get('/admin/profile',[AdminProfileController::class,'AdminProfile'])->name('admin.profile');
+    Route::get('/admin/profile/edit',[AdminProfileController::class,'AdminProfileEdit'])->name('admin.profile.edit');
+    Route::post('/admin/profile/store',[AdminProfileController::class,'AdminProfileStore'])->name('admin.profile.store');
+    Route::get('/admin/change/password',[AdminProfileController::class,'AdminChangePassword'])->name('admin.change.password');
+    Route::post('/admin/update/password',[AdminProfileController::class,'AdminUpdatePassword'])->name('update.change.password');
 
 // all slider route
 
@@ -91,14 +77,14 @@ Route::group(['prefix' => 'admin', 'middleware'=>['admin:admin']],function(){
     Route::post('/admin/slider/update/{id}',[SliderController::class,'Update']);
 
 
-    
-      // services route
+    // services route
 
     Route::get('/admin/service/all',[ServiceController::class,'AllService'])->name('all.service');
     Route::post('/admin/service/add',[ServiceController::class,'AddService'])->name('store.service');
     Route::get('/admin/service/edit/{id}',[ServiceController::class,'Edit']);
     Route::post('/admin/service/update/{id}',[ServiceController::class,'Update']);
     Route::get('/admin/service/delete/{id}',[ServiceController::class,'Delete']);
+
 
     // work route
     Route::get('/admin/work/all',[WorkController::class,'AllWork'])->name('all.work');
@@ -107,6 +93,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>['admin:admin']],function(){
     Route::post('/admin/work/update/{id}',[WorkController::class,'Update']);
     Route::get('/admin/work/delete/{id}',[WorkController::class,'Delete']);
 
+
+    
     // client route
     Route::get('/admin/client/all',[ClientController::class,'AllClient'])->name('all.client');
     Route::post('/admin/client/add',[ClientController::class,'AddClient'])->name('store.client');
@@ -125,7 +113,22 @@ Route::group(['prefix' => 'admin', 'middleware'=>['admin:admin']],function(){
     Route::post('/admin/portfolio/add',[PortfolioController::class,'AddPortfolio'])->name('store.portfolio');
     Route::get('/admin/portfolio/edit/{id}',[PortfolioController::class,'Edit']);
     Route::post('/admin/portfolio/update/{id}',[PortfolioController::class,'Update']);
+  });    
 
+// home page routes
+
+        Route::get('/services',[ServiceController::class,'Service'])->name('service'); // home page route 
+
+        Route::get('/works',[WorkController::class,'Work'])->name('work');
+
+        Route::get('/clients',[ClientController::class,'Client'])->name('client');
+
+        Route::get('/about',[WorkController::class,'About'])->name('about');
+
+        Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
+
+        // home contact route
+        Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
 
 
 
